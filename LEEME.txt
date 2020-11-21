@@ -1,0 +1,39 @@
+SECCION 07 REST SERVER
+
+- En esta seccion se introduce a la instalacion de mongoDB y Robo 3T como herramienta IDE para mongoDB
+  La idea es crear un servicio REST con mongoDB como soporte para datos.
+
+
+- Los pasos a seguir son:
+
+    > npm init          'Creara el package.json para que podamos hacer instalaciones etc.
+
+    > npm install express --save    'Vamos a utilizar express
+
+    * Crearemos un directorio denominado "server" donde creare un archivo llamado server.js (esto es por organizacion)
+
+    * Navegamos buscando "npm express" y, en la pagina de npm referente a express copiamos y pegamos el codigo para utilizarlo:
+    const express = require('express')
+    const app = express()
+    app.get('/', function (req, res) {
+        res.send('Hello World')
+    })
+    app.listen(3000)
+
+    * Para las peticiones POST y el tratamiento de datos enviados y serializados utilizaremos "Body-parser"
+
+    > npm install body-parser --save    'Instala body-parser para la serializacion de datos enviados
+
+
+- Mas adelante, se presenta la posibilidad de crear un archivo de configuracion para la aplicacion, por lo que se
+    crea el archivo /server/config/config.js
+
+- En GitHub creamos un repositorio "node-restserver"
+
+    > git init
+    > git status
+    > git add .
+    > git commit -m "Primer commit"
+    > git status
+    > git remote add origin https://github.com/enalda/node-restserver.git
+    > git push -u origin master
