@@ -50,11 +50,13 @@ Desde el directorio de la aplicacion:
     > heroku create
 
     Si queremos darle un nombre especifico (hay que recordar que los nombres son unicos en heroku y compartidos por todos los usuarios...) 
-    > heroku create -h nombreRepositorio
+    > heroku create "nalda-restserver"
+
+    https://nalda-restserver.herokuapp.com/ | https://git.heroku.com/nalda-restserver.git
 
 Notar que, en cualquier caso, ademas de crear el repositoro en Heroku tambien lo hara en Git, mostrando la URL a dicho repositorio.
 
-    > git remote            'Mostrara tanto heroku como git
+    > git remote            'Mostrara tanto heroku como origin
 
 En el caso en que no nos hubieramos logado antes, hay que hacer primero:
     > heroku login
@@ -77,6 +79,6 @@ Ahora, para subir el codigo:
     > git push heroku master
     > heroku open
 
-        En el navegador pondremos al final de la URL un /usuario, pero lo interesante es ir a POSTMAN
+        En el navegador pondremos https://nalda-restserver.herokuapp.com/usuario, pero lo interesante es ir a POSTMAN
         e intentar hacer las peticiones PUT, GET, etc.
 
