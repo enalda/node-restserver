@@ -37,3 +37,46 @@ SECCION 07 REST SERVER
     > git status
     > git remote add origin https://github.com/enalda/node-restserver.git
     > git push -u origin master
+    > git tag -a v1.0.0 -m "Primera version del proyecto"
+    > git push --tags
+
+
+- SUBIDA A HEROKU (desde la linea de comando)
+-==========================
+
+Desde el directorio de la aplicacion:
+
+    Para crear un repositorio en heroku cuyo nombre sera aleatorio:
+    > heroku create
+
+    Si queremos darle un nombre especifico (hay que recordar que los nombres son unicos en heroku y compartidos por todos los usuarios...) 
+    > heroku create -h nombreRepositorio
+
+Notar que, en cualquier caso, ademas de crear el repositoro en Heroku tambien lo hara en Git, mostrando la URL a dicho repositorio.
+
+    > git remote            'Mostrara tanto heroku como git
+
+En el caso en que no nos hubieramos logado antes, hay que hacer primero:
+    > heroku login
+
+
+Ahora, para subir el codigo:
+    > git push heroku master
+
+    > heroku open       'abrira la aplicacion en el navegador
+
+    De encontrarnos un error, hay que definir el "start" en el package.json de la siguiente forma:
+
+    "scripts":{
+        "start": "node server/server.js",
+        "test": "...."
+    }
+
+    > git add . 
+    > git commit -am "Npm start listo"    'Agrega y añade mensaje al commit
+    > git push heroku master
+    > heroku open
+
+        En el navegador pondremos al final de la URL un /usuario, pero lo interesante es ir a POSTMAN
+        e intentar hacer las peticiones PUT, GET, etc.
+
